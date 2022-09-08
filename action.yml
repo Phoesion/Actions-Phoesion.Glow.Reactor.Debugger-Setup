@@ -9,9 +9,9 @@ inputs:
     description: 'Version of package to install'
     required: true
   shell_cmd:
-    description: 'Use speficied command to run installer script (can use `sudo` here if needed)'
+    description: 'Use speficied command prefix to run installer script'
     required: false
-    default: ''
+    default: 'sudo'
 runs:
   using: "composite"
   steps:
