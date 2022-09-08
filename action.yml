@@ -7,8 +7,7 @@ inputs:
     default: 'phoesion.glow'
   version:
     description: 'Version of package to install'
-    required: false
-    default: '../'
+    required: true
 runs:
   using: "composite"
   steps:
