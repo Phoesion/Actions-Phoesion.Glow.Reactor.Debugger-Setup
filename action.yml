@@ -8,8 +8,12 @@ inputs:
   version:
     description: 'Version of package to install'
     required: true
+  shell_cmd:
+    description: 'Use speficied command to run installer script (can use `sudo` here if needed)'
+    required: false
+    default: ''
 runs:
   using: "composite"
   steps:
-    - run: sudo ${{ github.action_path }}/install.sh "${{ inputs.repo }}" "${{ inputs.version }}"
+    - run: ${{ inputs.shell_cmd }} ${{ github.action_path }}/install.sh "${{ inputs.repo }}" "${{ inputs.version }}"
       shell: bash
